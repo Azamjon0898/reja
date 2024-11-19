@@ -1,6 +1,5 @@
 console.log("web Serverni boshlash");
-const express = require("express");
-const res = require("express/lib/responce");
+const express = require('express');
 const app = express();
 const http = require("http");
 const fs = require("fs");
@@ -10,7 +9,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
    if(err) {
       console.log("ERROR:", err);
    } else {
-      user = JSON.parse(data)
+      user = JSON.parse(data);
    }
 });
 
@@ -28,21 +27,22 @@ app.set("view engine", "ejs");
 // 4 ROUTING code
 app.post("/create-item", (req,res) => {
    // TODO: code with db here
+   console.log(req.body);
 });
 
 app.get('/author', (req, res) => {
-   res.render("author", {user: user });
+   res.render("author");
 });
 
 app.get("/", function (req, res) {
    res.render("harid");
 });
 
+
+
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`The server is running succesfully on port: ${PORT}`);
 });
-
-
 
