@@ -4,6 +4,7 @@ const app = express();
 const http = require("http");
 const fs = require("fs");
 
+
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
    if(err) {
@@ -19,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // 2 Session code
-
 // 3 VIEWS code
 app.set("views", "views");
 app.set("view engine", "ejs");
@@ -31,7 +31,7 @@ app.post("/create-item", (req,res) => {
 });
 
 app.get('/author', (req, res) => {
-   res.render("author");
+   res.render("author", {user: user});
 });
 
 app.get("/", function (req, res) {
