@@ -4,14 +4,7 @@ const app = express();
 const http = require("http");
 const fs = require("fs");
 
-let user;
-fs.readFile("database/user.json", "utf8", (err, data) => {
-   if(err) {
-      console.log("ERROR:", err);
-   } else {
-      user = JSON.parse(data);
-   }
-});
+
 
 // 1 KIRISH code
 app.use(express.static("public"));
