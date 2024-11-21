@@ -141,10 +141,11 @@ function countLetter(letter, word) {
             count++;
         }
     }
-
     return count;
 }
+
 console.log("Avtomobilsozlik so'zida nechta O harfi borligini hisoblaymiz:");
+
 console.log("Javob:",countLetter("o", "avtomobilsozlik"), "ta");
 
 
