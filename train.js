@@ -1,4 +1,4 @@
-// 21-dars
+// // 21-dars
 // console.log("Jack Ma maslahatlari:");
 // const list = [
 //     "Yaxshi talaba bo'ling", // 0-20
@@ -39,46 +39,43 @@
 
 
 
+// // 22-dars
 
+// console.log("Jack Ma maslahatlari:");
+// const list = [
+//     "Yaxshi talaba bo'ling", // 0-20
+//     "To'g'ri boshliq tanlang va ko'proq xato qiling", // 20-30
+//     "O'zingizga ishlashingizni boshlang", // 30-40
+//     "Siz kuchli bo'lgan narsalarni qiling", // 40-50
+//     "Yoshlarga investitsiya qiling", // 50-60
+//     "Endi dam oling, foydasi yo'q", // 60~
+//     ""
+// ];
 
-
-// 22-dars
-
-console.log("Jack Ma maslahatlari:");
-const list = [
-    "Yaxshi talaba bo'ling", // 0-20
-    "To'g'ri boshliq tanlang va ko'proq xato qiling", // 20-30
-    "O'zingizga ishlashingizni boshlang", // 30-40
-    "Siz kuchli bo'lgan narsalarni qiling", // 40-50
-    "Yoshlarga investitsiya qiling", // 50-60
-    "Endi dam oling, foydasi yo'q", // 60~
-    ""
-];
-
-// CALLBACK functios
-function maslahatBering(a, callback) {
-    if(typeof a !== 'number') callback("insert a number", null);
-    else if(a <= 20) callback(null, list[0]);
-    else if(a > 20 && a <= 30) callback(null, list[1]);
-    else if(a > 30 && a <= 40) callback(null, list[2]);
-    else if(a > 40 && a <= 50) callback(null, list[3]);
-    else if(a > 50 && a <= 60) callback(null, list[4]);
-    else {
-        setInterval(function () {
-            callback(null, list[5])
-        }, 1000);
+// // CALLBACK functios
+// function maslahatBering(a, callback) {
+//     if(typeof a !== 'number') callback("insert a number", null);
+//     else if(a <= 20) callback(null, list[0]);
+//     else if(a > 20 && a <= 30) callback(null, list[1]);
+//     else if(a > 30 && a <= 40) callback(null, list[2]);
+//     else if(a > 40 && a <= 50) callback(null, list[3]);
+//     else if(a > 50 && a <= 60) callback(null, list[4]);
+//     else {
+//         setInterval(function () {
+//             callback(null, list[5])
+//         }, 1000);
         
-    }
-}
+//     }
+// }
 
-console.log('passed here 0');
-maslahatBering(65, (err, data) => {
-    if(err) console.log('ERROR:', err);
-    else {
-        console.log("javob", data);
-    }
-})
-console.log('passed here 1');
+// console.log('passed here 0');
+// maslahatBering(65, (err, data) => {
+//     if(err) console.log('ERROR:', err);
+//     else {
+//         console.log("javob", data);
+//     }
+// })
+// console.log('passed here 1');
 
 
 
@@ -131,4 +128,24 @@ console.log('passed here 1');
 // run();
 
 // Tayyor
+
+
+// // A-TASK
+console.log("A-TASK:");
+function countLetter(letter, word) {
+    letter = letter.toLowerCase();
+    word = word.toLowerCase();
+    let count = 0;
+    for (let char of word) {
+        if (char === letter) {
+            count++;
+        }
+    }
+
+    return count;
+}
+console.log("Avtomobilsozlik so'zida nechta O harfi borligini hisoblaymiz:");
+console.log("Javob:",countLetter("o", "avtomobilsozlik"), "ta");
+
+
 
