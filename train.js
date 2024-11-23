@@ -130,23 +130,41 @@
 // Tayyor
 
 
-// // A-TASK
-console.log("A-TASK:");
-function countLetter(letter, word) {
-    letter = letter.toLowerCase();
-    word = word.toLowerCase();
-    let count = 0;
-    for (let char of word) {
-        if (char === letter) {
-            count++;
-        }
+// // // A-TASK
+// console.log("A-TASK:");
+// function countLetter(letter, word) {
+//     letter = letter.toLowerCase();
+//     word = word.toLowerCase();
+//     let count = 0;
+//     for (let char of word) {
+//         if (char === letter) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+// console.log("Avtomobilsozlik so'zida nechta O harfi borligini hisoblaymiz:");
+
+// console.log("Javob:",countLetter("o", "avtomobilsozlik"), "ta");
+
+// DEFINE
+function qoldiqBolish(a, b, callback) {
+    if (b === 5) {
+      callback("Mahraj nolga teng bolmasin!", null);
+    } else {
+      const c = a % b;
+      callback(null, c);
     }
-    return count;
-}
-
-console.log("Avtomobilsozlik so'zida nechta O harfi borligini hisoblaymiz:");
-
-console.log("Javob:",countLetter("o", "avtomobilsozlik"), "ta");
-
-
+  }
+  
+  // CALL
+  qoldiqBolish(11, 5, (err, data,) => {
+    if (err) {
+      console.log("ERROR:", err);
+    } else {
+      console.log("data:", data);
+      console.log("ANY LOGIC");
+    }
+  });
 
