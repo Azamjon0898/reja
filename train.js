@@ -148,23 +148,36 @@
 
 // console.log("Javob:",countLetter("o", "avtomobilsozlik"), "ta");
 
-// DEFINE
-function qoldiqBolish(a, b, callback) {
-    if (b === 5) {
-      callback("Mahraj nolga teng bolmasin!", null);
-    } else {
-      const c = a % b;
-      callback(null, c);
-    }
-  }
+// // DEFINE
+// function qoldiqBolish(a, b, callback) {
+//     if (b === 5) {
+//       callback("Mahraj nolga teng bolmasin!", null);
+//     } else {
+//       const c = a % b;
+//       callback(null, c);
+//     }
+//   }
   
-  // CALL
-  qoldiqBolish(11, 5, (err, data,) => {
-    if (err) {
-      console.log("ERROR:", err);
-    } else {
-      console.log("data:", data);
-      console.log("ANY LOGIC");
-    }
-  });
+//   // CALL
+//   qoldiqBolish(11, 5, (err, data,) => {
+//     if (err) {
+//       console.log("ERROR:", err);
+//     } else {
+//       console.log("data:", data);
+//       console.log("ANY LOGIC");
+//     }
+//   });
 
+// B-TASK
+console.log("B-TASK:");
+function countDigits(inputString) {
+  let count = 0;
+  for (let char of inputString) {
+      if (!isNaN(char) && char !== ' ') {
+          count++;
+      }
+  }
+  return count;
+}
+const result = countDigits("0b6s8jc7s9b3m1cx8zfq2j1d7");
+console.log("Javob: Raqamlar soni", result, "ta");
