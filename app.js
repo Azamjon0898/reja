@@ -12,7 +12,8 @@ const app = express();
 //    }
 // });
 
-//MongoDB connect
+//MongoDB chqirish
+const db = require("./server").db();
 
 // 1 KIRISH code
 app.use(express.static("public"));

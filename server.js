@@ -7,9 +7,11 @@ mongodb.connect(connectionString, {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
 }, (err, client) => {
-    isBuffer(err) console.log("ERROR on connection MongoDB");
+    if (err) console.log("ERROR on connection MongoDB");
     else {
-        console,log("MongoDB connecttion succeed");
+        console.log("MongoDB connecttion succeed");
+        module.exports = client;
+
         const app = require("./app");
         const server = http.createServer(app);
         let PORT = 3000;
