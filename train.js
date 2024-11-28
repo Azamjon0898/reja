@@ -168,16 +168,27 @@
 //     }
 //   });
 
-// B-TASK
-console.log("B-TASK:");
-function countDigits(inputString) {
-  let count = 0;
-  for (let char of inputString) {
-      if (!isNaN(char) && char !== ' ') {
-          count++;
-      }
-  }
-  return count;
+// // B-TASK
+// console.log("B-TASK:");
+// function countDigits(inputString) {
+//   let count = 0;
+//   for (let char of inputString) {
+//       if (!isNaN(char) && char !== ' ') {
+//           count++;
+//       }
+//   }
+//   return count;
+// }
+// const result = countDigits("0b6s8jc7s9b3m1cx8zfq2j1d7");
+// console.log("Javob: Raqamlar soni", result, "ta");
+
+// C-TASK
+
+function checkContent(str1, str2) {
+  const normalize = (str) => Array.from(new Set(str.split('').sort())).join('');
+  return normalize(str1) === normalize(str2);
 }
-const result = countDigits("0b6s8jc7s9b3m1cx8zfq2j1d7");
-console.log("Javob: Raqamlar soni", result, "ta");
+
+console.log(checkContent("mercedes", "sedemerc")); // true
+console.log(checkContent("muzlatkich", "lchatmuzk")); // false
+console.log(checkContent("onajon", "njonao")); // true
