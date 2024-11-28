@@ -3,6 +3,10 @@ const express = require("express");
 const app = express();
 // const fs = require("fs");
 
+//MongoDB chqirish
+const db = require("./server").db();
+const mongoDB = require("mongodb");
+
 // let user;
 // fs.readFile("database/user.json", "utf8", (err, data) => {
 //    if(err) {
@@ -12,8 +16,6 @@ const app = express();
 //    }
 // });
 
-//MongoDB chqirish
-const db = require("./server").db();
 
 // 1 KIRISH code
 app.use(express.static("public"));
@@ -39,7 +41,6 @@ app.post("/create-item", (req,res) => {
       // }
       console.log(data.ops);
       res.json(data.ops[0]);
-
    });
    // TODO: code with db here
    // console.log(req.body);
@@ -48,6 +49,16 @@ app.post("/create-item", (req,res) => {
 // app.get('/author', (req, res) => {
 //    res.render("author", {user: user});
 // });
+
+app.post("/delete-item", (req, res)=> {
+   const id = req.body.id;
+   db.collection("plans").deleteOne(
+      {_id: new mongoDB.ObjectId(id)}, 
+      function(err, data) {
+         res.json({ state: "success" });
+      }
+   )
+});
 
 app.get("/", function (req, res) {
    console.log("user entered /");
