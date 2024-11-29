@@ -182,13 +182,69 @@
 // const result = countDigits("0b6s8jc7s9b3m1cx8zfq2j1d7");
 // console.log("Javob: Raqamlar soni", result, "ta");
 
-// C-TASK
+// // C-TASK
 
-function checkContent(str1, str2) {
-  const normalize = (str) => Array.from(new Set(str.split('').sort())).join('');
-  return normalize(str1) === normalize(str2);
+// function checkContent(str1, str2) {
+//   const normalize = (str) => Array.from(new Set(str.split('').sort())).join('');
+//   return normalize(str1) === normalize(str2);
+// }
+
+// console.log(checkContent("mercedes", "sedemerc")); // true
+// console.log(checkContent("muzlatkich", "lchatmuzk")); // false
+// console.log(checkContent("onajon", "njonao")); // true
+
+// D-TASK
+
+class Shop {
+  constructor(cola, pepsi, aqua) {
+      this.products = {
+          Cola: cola,
+          Pepsi: pepsi,
+          Aqua: aqua,
+      };
+  }
+  getCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      return `${hours}:${minutes}`;
+  }
+  qoldiq() {
+      const time = this.getCurrentTime();
+      console.log(
+          `Hozir ${time}da ${this.products.Cola}ta Cola, ${this.products.Pepsi}ta Pepsi va ${this.products.Aqua}ta Aqua mavjud!`
+      );
+      return this.products;
+  }
+  sotish(mahsulot, soni) {
+      if (this.products[mahsulot] === undefined) {
+          console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+          return;
+      }
+      if (this.products[mahsulot] < soni) {
+          console.log(
+              `Hozirgi vaqtda ${mahsulot}dan yetarlicha mavjud emas. Faqat ${this.products[mahsulot]}ta qolgan!`
+          );
+          return;
+      }
+      this.products[mahsulot] -= soni;
+      console.log(
+          `Hozir ${this.getCurrentTime()}da ${soni}ta ${mahsulot} sotildi!`
+      );
+  }
+  qabul(mahsulot, soni) {
+      if (this.products[mahsulot] === undefined) {
+          console.log(`Bunday mahsulot mavjud emas: ${mahsulot}`);
+          return;
+      }
+      this.products[mahsulot] += soni;
+      console.log(
+          `Hozir ${this.getCurrentTime()}da ${soni}ta ${mahsulot} qabul qilindi!`
+      );
+  }
 }
-
-console.log(checkContent("mercedes", "sedemerc")); // true
-console.log(checkContent("muzlatkich", "lchatmuzk")); // false
-console.log(checkContent("onajon", "njonao")); // true
+const shop = new Shop(8, 1, 9);
+shop.qoldiq();
+shop.sotish("Cola", 3);
+shop.qabul("Aqua", 4);
+shop.qoldiq();
