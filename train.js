@@ -249,12 +249,32 @@
 // shop.qabul("Aqua", 4);
 // shop.qoldiq();
 
-// E-TASK
+// // E-TASK
 
-function getReverse(str) {
-    return str.split("").reverse().join("");
+// function getReverse(str) {
+//     return str.split("").reverse().join("");
+// }
+
+// console.log("KEVIN so'zining teskarisi:", getReverse("KEVIN"));
+// console.log("BANANA so'zining teskarisi:", getReverse("BANANA"));
+// console.log("AVTOMOBIL so'zining teskarisi:", getReverse("AVTOMOBIL"));
+
+// F-TASK
+
+console.log("F-TASK:");
+function findDoublers(str) {
+    const seen = new Set();
+    for (let char of str) {
+        if (seen.has(char)) {
+            return true;
+        }
+        seen.add(char);
+    }
+    return false;
 }
 
-console.log("KEVIN so'zining teskarisi:", getReverse("KEVIN"));
-console.log("BANANA so'zining teskarisi:", getReverse("BANANA"));
-console.log("AVTOMOBIL so'zining teskarisi:", getReverse("AVTOMOBIL"));
+console.log("telefon:", findDoublers("telefon"));
+console.log("olma:", findDoublers("olma"));
+console.log("avtomobil:", findDoublers("avtomobil"));
+console.log("muzlatkich:", findDoublers("muzlatkich"));
+console.log("monster:", findDoublers("monster"));
